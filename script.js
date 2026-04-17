@@ -20,7 +20,6 @@
     const hiddenMessage  = document.getElementById('hidden-message');
     const hiddenNextBtn  = document.getElementById('hidden-next-btn');
     const musicToggle    = document.getElementById('music-toggle');
-    const bgMusic        = document.getElementById('bg-music');
     const heartsCanvas   = document.getElementById('hearts-canvas');
     const ctx            = heartsCanvas.getContext('2d');
 
@@ -130,16 +129,40 @@
     });
 
     // ===================================================
-    //  MUSIC PLAYER
+    //  MUSIC PLAYER (YouTube IFrame API)
     // ===================================================
+    const YOUTUBE_VIDEO_ID = 'Gy0kSws4JQs';
+    let ytPlayer = null;
+    let ytReady  = false;
+
+    // Load YouTube IFrame API
+    const ytScript  = document.createElement('script');
+    ytScript.src    = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(ytScript);
+
+    // Called automatically by YouTube API when ready
+    window.onYouTubeIframeAPIReady = function () {
+        ytPlayer = new YT.Player('yt-player', {
+            videoId: YOUTUBE_VIDEO_ID,
+            playerVars: {
+                autoplay: 0,
+                loop: 1,
+                playlist: YOUTUBE_VIDEO_ID,   // required for loop
+            },
+            events: {
+                onReady: function () { ytReady = true; },
+            },
+        });
+    };
+
     musicToggle.addEventListener('click', () => {
+        if (!ytReady) return;
+
         if (isMusicPlaying) {
-            bgMusic.pause();
+            ytPlayer.pauseVideo();
             musicToggle.classList.remove('playing');
         } else {
-            bgMusic.play().catch(() => {
-                /* autoplay blocked — user will click again */
-            });
+            ytPlayer.playVideo();
             musicToggle.classList.add('playing');
         }
         isMusicPlaying = !isMusicPlaying;

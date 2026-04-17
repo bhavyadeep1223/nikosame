@@ -19,9 +19,10 @@
     <button id="music-toggle" class="music-btn" aria-label="Toggle music" title="Play / Pause Music">
         <span class="music-icon" id="music-icon">♪</span>
     </button>
-    <audio id="bg-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+    <!-- Hidden YouTube Player -->
+    <div id="yt-player-wrap" style="position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;overflow:hidden;pointer-events:none;">
+        <div id="yt-player"></div>
+    </div>
 
     <!-- ====== SECTION 1: LOCK SCREEN ====== -->
     <section id="lock-screen" class="screen active">
