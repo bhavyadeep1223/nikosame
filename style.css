@@ -387,6 +387,55 @@ body {
     animation: subtle-glow 3s ease-in-out infinite;
 }
 
+/* Quit Button */
+.btn-quit {
+    padding: 10px 32px;
+    border: 1.5px solid rgba(150, 120, 150, 0.3);
+    border-radius: 50px;
+    background: transparent;
+    color: rgba(90, 61, 92, 0.5);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.4s var(--ease-smooth);
+    letter-spacing: 0.03em;
+}
+.btn-quit:hover {
+    border-color: rgba(212, 119, 142, 0.5);
+    color: var(--pink-deep);
+    background: rgba(240, 161, 180, 0.06);
+}
+.screen-dark .btn-quit {
+    color: rgba(255, 248, 245, 0.35);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+.screen-dark .btn-quit:hover {
+    color: var(--pink-light);
+    border-color: rgba(240, 161, 180, 0.3);
+    background: rgba(240, 161, 180, 0.08);
+}
+
+/* Quit Response */
+.quit-response {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--rose);
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.65s var(--ease-bounce);
+    pointer-events: none;
+    min-height: 0;
+}
+.quit-response.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.screen-dark .quit-response {
+    color: var(--pink-light);
+}
+
 /* Hidden-by-default next buttons in interactive sections */
 #flirty-next-btn,
 #hidden-next-btn {

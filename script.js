@@ -63,6 +63,18 @@
         });
     });
 
+    // Wire up every .quit-btn
+    document.querySelectorAll('.quit-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const response = btn.nextElementSibling;
+            if (response && response.classList.contains('quit-response')) {
+                response.classList.add('show');
+            }
+            btn.style.opacity = '0.35';
+            btn.style.pointerEvents = 'none';
+        });
+    });
+
     // ===================================================
     //  LOCK SCREEN
     // ===================================================
