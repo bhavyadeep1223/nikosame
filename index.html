@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For You 💕</title>
+    <meta name="description" content="A special birthday surprise just for you">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Floating Hearts Canvas -->
+    <canvas id="hearts-canvas"></canvas>
+
+    <!-- Music Toggle -->
+    <button id="music-toggle" class="music-btn" aria-label="Toggle music" title="Play / Pause Music">
+        <span class="music-icon" id="music-icon">♪</span>
+    </button>
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ====== SECTION 1: LOCK SCREEN ====== -->
+    <section id="lock-screen" class="screen active">
+        <div class="lock-bg">
+            <img src="images/lockscreen.jpg" alt="" class="lock-bg-img">
+        </div>
+        <div class="lock-overlay"></div>
+        <div class="lock-content">
+            <div class="lock-icon" id="lock-icon">🔒</div>
+            <h1 class="lock-title">Only you can unlock this 😌</h1>
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="password-input" 
+                    class="password-input" 
+                    placeholder="Enter the password..." 
+                    autocomplete="off" 
+                    spellcheck="false"
+                >
+                <button id="unlock-btn" class="btn-glow">Unlock</button>
+            </div>
+            <p class="hint-text">You know this one…</p>
+            <p id="error-msg" class="msg error-msg"></p>
+            <p id="success-msg" class="msg success-msg"></p>
+        </div>
+    </section>
+
+    <!-- ====== SECTION 2: OPENING SCREEN ====== -->
+    <section id="opening-screen" class="screen">
+        <div class="screen-content center-content">
+            <div class="text-block">
+                <p class="opening-line line-1">I swear… I didn't plan this 😌</p>
+                <p class="opening-line line-2">…but here we are.</p>
+            </div>
+            <button class="btn-primary next-btn" data-next="photo-section-1">Keep going 😌</button>
+        </div>
+    </section>
+
+    <!-- ====== SECTION 3: PHOTO SECTION 1 ====== -->
+    <section id="photo-section-1" class="screen">
+        <div class="screen-content center-content">
+            <div class="polaroid-wrapper">
+                <div class="polaroid rotate-left">
+                    <div class="polaroid-img-wrapper">
+                        <img src="images/photo1.jpg" alt="A special memory">
+                    </div>
+                    <p class="polaroid-label">for you ✨</p>
+                </div>
+            </div>
+            <p class="section-caption">"Mabbu theralu thenchukunna jabillama va?"</p>
+            <button class="btn-primary next-btn" data-next="photo-section-2">Next 💫</button>
+        </div>
+    </section>
+
+    <!-- ====== SECTION 4: PHOTO SECTION 2 ====== -->
+    <section id="photo-section-2" class="screen">
+        <div class="screen-content center-content">
+            <div class="polaroid-wrapper">
+                <div class="polaroid rotate-right">
+                    <div class="polaroid-img-wrapper">
+                        <img src="images/photo2.jpg" alt="Another special memory">
+                    </div>
+                    <p class="polaroid-label">always 💕</p>
+                </div>
+            </div>
+            <p class="section-caption">"Chinnappudu maa amma 'Chandamama raave' ante… endhuku raaledhu?"</p>
+            <button class="btn-primary next-btn" data-next="flirty-section">Keep going 😌</button>
+        </div>
+    </section>
+
+    <!-- ====== SECTION 5: FLIRTY SECTION ====== -->
+    <section id="flirty-section" class="screen">
+        <div class="screen-content center-content">
+            <h2 class="section-title fade-in-item" style="--delay: 0.15s">Things I shouldn't say… but I will 😌</h2>
+            <div class="cards-container">
+                <div class="flirty-card fade-in-item" style="--delay: 0.35s">
+                    <p>"You act innocent… but I don't trust that at all 😏"</p>
+                </div>
+                <div class="flirty-card fade-in-item" style="--delay: 0.6s">
+                    <p>"You enjoy my presence more than you admit… don't you? 😏"</p>
+                </div>
+                <div class="flirty-card fade-in-item" style="--delay: 0.85s">
+                    <p>"I was supposed to stay chill… you made that difficult"</p>
+                </div>
+            </div>
+            <p class="highlight-text fade-in-item" style="--delay: 1.15s">"You're trouble… but I don't mind 😌"</p>
+            <button class="btn-primary fade-in-item" id="agree-btn" style="--delay: 1.45s">Do you agree? 👀</button>
+            <p id="agree-response" class="agree-response">"Yeah… I knew it 😏"</p>
+            <button class="btn-primary next-btn" id="flirty-next-btn" data-next="hidden-section">Continue 💫</button>
+        </div>
+    </section>
+
+    <!-- ====== SECTION 6: HIDDEN MESSAGE ====== -->
+    <section id="hidden-section" class="screen">
+        <div class="screen-content center-content">
+            <button class="btn-mystery" id="reveal-btn">Click this… but don't overthink 👀</button>
+            <div id="hidden-message" class="hidden-message">
+                <p>I didn't plan on liking you this much…</p>
+                <p>but somehow you became one of my favorite people.</p>
+            </div>
+            <button class="btn-primary next-btn" id="hidden-next-btn" data-next="final-screen">Almost there… 💕</button>
+        </div>
+    </section>
+
+    <!-- ====== SECTION 7: FINAL SCREEN ====== -->
+    <section id="final-screen" class="screen screen-dark">
+        <div class="screen-content center-content">
+            <div class="glow-text-wrapper">
+                <p class="final-line">You're special to me all 365 days…</p>
+                <p class="final-line">but today I get an excuse to say it out loud.</p>
+                <p class="final-line spacer"></p>
+                <p class="final-line birthday-line">So yeah… happy birthday 😌🎂</p>
+            </div>
+            <button class="btn-primary next-btn glow-btn" data-next="ending-screen">One more thing… 😌</button>
+        </div>
+    </section>
+
+    <!-- ====== SECTION 8: ENDING SCREEN ====== -->
+    <section id="ending-screen" class="screen screen-dark">
+        <div class="screen-content center-content">
+            <p class="ending-main">That's it… don't overthink this 😌</p>
+            <p class="ending-extra">You smiled, didn't you… bangaram? 😏</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
