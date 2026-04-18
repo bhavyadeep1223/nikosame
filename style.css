@@ -161,24 +161,24 @@ body {
 
 /* ---------- Section Backgrounds ---------- */
 #opening-screen {
-    background: linear-gradient(155deg, var(--cream) 0%, var(--pink-soft) 50%, var(--lavender-soft) 100%);
-    color: var(--text-dark);
+    background: linear-gradient(155deg, #d4507a 0%, #c2185b 50%, #ad1457 100%);
+    color: #fff;
 }
 #photo-section-1 {
-    background: linear-gradient(155deg, var(--lavender-soft) 0%, var(--pink-soft) 55%, var(--cream) 100%);
-    color: var(--text-dark);
+    background: linear-gradient(155deg, #c2185b 0%, #d81b60 55%, #e91e6e 100%);
+    color: #fff;
 }
 #photo-section-2 {
-    background: linear-gradient(155deg, var(--pink-soft) 0%, var(--cream-warm) 50%, var(--lavender-soft) 100%);
-    color: var(--text-dark);
+    background: linear-gradient(155deg, #ad1457 0%, #c2185b 50%, #d4507a 100%);
+    color: #fff;
 }
 #flirty-section {
-    background: linear-gradient(155deg, var(--cream) 0%, var(--lavender-soft) 50%, var(--pink-soft) 100%);
-    color: var(--text-dark);
+    background: linear-gradient(155deg, #d81b60 0%, #c2185b 50%, #ad1457 100%);
+    color: #fff;
 }
 #hidden-section {
-    background: linear-gradient(155deg, var(--pink-soft) 0%, var(--lavender-soft) 55%, var(--cream) 100%);
-    color: var(--text-dark);
+    background: linear-gradient(155deg, #c2185b 0%, #ad1457 55%, #d81b60 100%);
+    color: #fff;
 }
 
 /* Dark-themed screens */
@@ -390,10 +390,10 @@ body {
 /* Quit Button */
 .btn-quit {
     padding: 10px 32px;
-    border: 1.5px solid rgba(150, 120, 150, 0.3);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     background: transparent;
-    color: rgba(90, 61, 92, 0.5);
+    color: rgba(255, 255, 255, 0.55);
     font-family: 'Outfit', sans-serif;
     font-size: 0.85rem;
     font-weight: 400;
@@ -402,9 +402,9 @@ body {
     letter-spacing: 0.03em;
 }
 .btn-quit:hover {
-    border-color: rgba(212, 119, 142, 0.5);
-    color: var(--pink-deep);
-    background: rgba(240, 161, 180, 0.06);
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
 }
 .screen-dark .btn-quit {
     color: rgba(255, 248, 245, 0.35);
@@ -421,7 +421,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 1.15rem;
-    color: var(--rose);
+    color: #ffd6e0;
     opacity: 0;
     transform: translateY(10px) scale(0.95);
     transition: all 0.65s var(--ease-bounce);
@@ -465,7 +465,7 @@ body {
     font-size: 1.65rem;
     font-weight: 400;
     line-height: 1.55;
-    color: var(--text-dark);
+    color: #fff;
     opacity: 0;
     transform: translateY(22px);
     transition: all 0.85s var(--ease-smooth);
@@ -476,7 +476,7 @@ body {
 }
 .line-2 {
     font-style: italic;
-    color: var(--text-medium);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 #opening-screen .btn-primary {
@@ -503,8 +503,7 @@ body {
         0 12px 45px rgba(0, 0, 0, 0.12),
         0 3px 12px rgba(0, 0, 0, 0.06);
     transition: all 0.65s var(--ease-smooth);
-    max-width: 55vw;
-    max-height: 58vh;
+    max-width: 440px;
     width: 100%;
 }
 .polaroid.rotate-left  { transform: rotate(-3deg); }
@@ -519,7 +518,7 @@ body {
 
 .polaroid-img-wrapper {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
     overflow: hidden;
     border-radius: 3px;
     background: linear-gradient(135deg, var(--pink-soft), var(--lavender-soft));
@@ -546,7 +545,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 1.15rem;
-    color: var(--text-medium);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.65;
     max-width: 480px;
     opacity: 0;
@@ -576,7 +575,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--text-dark);
+    color: #fff;
     line-height: 1.45;
 }
 .cards-container {
@@ -590,39 +589,39 @@ body {
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 20px;
     padding: 24px 28px;
     transition: all 0.5s var(--ease-smooth);
-    box-shadow: 0 4px 18px rgba(196, 167, 215, 0.10);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
 }
 .flirty-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 32px rgba(196, 167, 215, 0.2);
-    background: rgba(255, 255, 255, 0.68);
+    background: rgba(255, 255, 255, 0.30);
 }
 .flirty-card p {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 1.05rem;
     line-height: 1.55;
-    color: var(--text-medium);
+    color: var(--text-dark);
 }
 
 .highlight-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--pink-deep);
+    color: #fff;
     line-height: 1.45;
-    text-shadow: 0 0 22px rgba(212, 119, 142, 0.18);
+    text-shadow: 0 0 22px rgba(255, 255, 255, 0.25);
 }
 
 .agree-response {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 1.25rem;
-    color: var(--rose);
+    color: #ffd6e0;
     opacity: 0;
     transform: translateY(12px) scale(0.94);
     transition: all 0.65s var(--ease-bounce);
@@ -654,7 +653,7 @@ body {
     border: 2px solid var(--lavender);
     border-radius: 50px;
     background: rgba(196, 167, 215, 0.08);
-    color: var(--text-medium);
+    color: #fff;
     font-family: 'Outfit', sans-serif;
     font-size: 1rem;
     font-weight: 500;
@@ -692,7 +691,7 @@ body {
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.85;
-    color: var(--text-medium);
+    color: rgba(255, 255, 255, 0.9);
 }
 .hidden-message p + p {
     margin-top: 4px;
@@ -850,7 +849,7 @@ body {
     .lock-title    { font-size: 1.45rem; }
     .lock-icon     { font-size: 40px; }
     .opening-line  { font-size: 1.3rem; }
-    .polaroid      { max-width: 80vw; max-height: 55vh; padding: 10px 10px 42px; }
+    .polaroid      { max-width: 340px; padding: 10px 10px 42px; }
     .section-caption { font-size: 1rem; }
     .section-title   { font-size: 1.25rem; }
     .flirty-card p   { font-size: 0.95rem; }
@@ -872,7 +871,7 @@ body {
     .opening-line  { font-size: 1.1rem; }
     .final-line    { font-size: 1rem; }
     .birthday-line { font-size: 1.3rem !important; }
-    .polaroid      { max-width: 88vw; max-height: 50vh; }
+    .polaroid      { max-width: 280px; }
     .flirty-card   { padding: 20px 22px; }
     .btn-primary   { padding: 13px 28px; }
 }
